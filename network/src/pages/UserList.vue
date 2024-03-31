@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import {getUsers} from '../../domain/user/service';
+import {getUsers, updateUser} from '../../domain/user/service';
 
 export default {
     name: 'UserList',
@@ -18,6 +18,7 @@ export default {
     },
     mounted() {
         this.getUserList();
+        this.editUser();
     },
     methods: {
         getUserList() {
@@ -28,6 +29,15 @@ export default {
             }).catch(e=>{
 
             });
+        },
+        editUser(){
+            updateUser(1,{
+                name: '王五'
+            }).then(res=>{
+                console.log('修改成功');
+            }).catch(e=>{
+                console.log(e);
+            })
         },
         cancelHandler() {
             this.cancel();
