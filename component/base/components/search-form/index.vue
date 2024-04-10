@@ -1,8 +1,10 @@
 <template>
     <div class="search-form">
         <div class="search-form-fields">
-            <div class="search-form-field" v-for="(field, index) in innerFields"
+            <div v-for="(field, index) in innerFields"
                  :key="field.key"
+                 class="search-form-field"
+                 :class="field.className"
                  :style="{
                    width: field.width,
                    marginRight: index < fields.length - 1 ? gutter + 'px' : 0
