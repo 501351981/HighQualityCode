@@ -1,0 +1,79 @@
+{
+  "width": 500,
+  "height": 500,
+  "backgroundColor": "#ffffff",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "rect",
+      "attributes": {
+        "width": 100,
+        "height": 100,
+        "backgroundColor": "#0000FF",
+        "borderWidth": 2,
+        "x": 152,
+        "y": 119
+      }
+    },
+    {
+      "id": 2,
+      "type": "circle",
+      "attributes": {
+        "radius": 30,
+        "backgroundColor": "#ff0000",
+        "borderWidth": 2,
+        "borderColor": "#a0a",
+        "x": 94,
+        "y": 84
+      }
+    },
+    {
+      "id": 3,
+      "type": "poly",
+      "attributes": {
+        "points": [
+          [
+            381,
+            131
+          ],
+          [
+            331,
+            231
+          ],
+          [
+            431,
+            231
+          ]
+        ],
+        "backgroundColor": "#377e22",
+        "borderWidth": 2
+      }
+    },
+    {
+      "id": 4,
+      "type": "poly",
+      "attributes": {
+        "points": [
+          [
+            174,
+            282
+          ],
+          [
+            124,
+            382
+          ],
+          [
+            224,
+            382
+          ],
+          [
+            224,
+            282
+          ]
+        ],
+        "backgroundColor": "#f2a93b",
+        "borderWidth": 2
+      }
+    }
+  ]
+}
