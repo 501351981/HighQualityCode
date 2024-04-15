@@ -53,4 +53,8 @@ export default class Node {
         //移动图形，由具体的子类实现
         this.dataModel.setDirty();
     }
+    setCenter(x, y){
+        this.dataModel.setDirty();
+        //将图形的中心点定在x，y处，具体由子类实现
+    }
 }

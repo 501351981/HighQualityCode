@@ -43,32 +43,13 @@ export default {
             let config = JSON.parse(event.dataTransfer.getData('config'))
             let attributes = lodash.cloneDeep(config.defaultAttributes);
 
-            switch (config.type){
-                case 'circle':
-                    //拖拽的是圆形，则把圆形放到鼠标所在位置
-                    attributes.x = x;
-                    attributes.y = y;
-                    break
-                case 'rect':
-                    attributes.x = x - attributes.width/2;
-                    attributes.y = y - attributes.height/2;
-                    break;
-                case 'poly':
-                    let points = attributes.points;
-                    let boundingBox = getBoundingBox(points)
-                    let centerX = boundingBox.x + boundingBox.width/2;
-                    let centerY = boundingBox.y + boundingBox.height/2;
-                    let diffX = x - centerX;
-                    let diffY = y - centerY;
-                    attributes.points = points.map(point=> [point[0] + diffX, point[1] + diffY])
-                    break;
-            }
             let node = createNode(config.type, {
                 graphView: this.graphView,
                 dataModel: this.dataModel,
                 id: this.dataModel.maxId + 1,
                 attributes
             })
+            node.setCenter(x, y);
             //添加到画布
             this.dataModel.addNode(node);
             //选中拖拽进来的节点

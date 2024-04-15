@@ -44,4 +44,9 @@ export default class CircleNode extends Node {
         this.attributes.x += dx;
         this.attributes.y += dy;
     }
+    setCenter(x, y){
+        super.setCenter(x, y);
+        this.attributes.x = x;
+        this.attributes.y = y;
+    }
 }

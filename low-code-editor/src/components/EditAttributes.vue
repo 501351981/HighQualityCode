@@ -15,6 +15,15 @@
                 <el-form-item v-if="['circle', 'rect'].includes(nodeType)" label="y" prop="y">
                     <el-input v-model="attributes.y" @input="editAttr('y', +$event)"/>
                 </el-form-item>
+                <el-form-item v-if="['circle'].includes(nodeType)" label="半径" prop="radius">
+                    <el-input v-model="attributes.radius" @input="editAttr('radius', +$event)"/>
+                </el-form-item>
+                <el-form-item v-if="['rect'].includes(nodeType)" label="宽度" prop="width">
+                    <el-input v-model="attributes.width" @input="editAttr('width', +$event)"/>
+                </el-form-item>
+                <el-form-item v-if="['rect'].includes(nodeType)" label="高度" prop="height">
+                    <el-input v-model="attributes.height" @input="editAttr('height', +$event)"/>
+                </el-form-item>
                 <el-form-item label="背景色" prop="backgroundColor">
                     <el-input v-model="attributes.backgroundColor"
                               type="color"

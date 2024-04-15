@@ -53,4 +53,14 @@ export default class PolyNode extends Node {
             points[i][1] += dy;
         }
     }
+    setCenter(x, y){
+        super.setCenter(x, y);
+        let points = this.attributes.points;
+        let boundingBox = this.getBoundingBox()
+        let centerX = boundingBox.x + boundingBox.width/2;
+        let centerY = boundingBox.y + boundingBox.height/2;
+        let diffX = x - centerX;
+        let diffY = y - centerY;
+        this.attributes.points = points.map(point=> [point[0] + diffX, point[1] + diffY])
+    }
 }
